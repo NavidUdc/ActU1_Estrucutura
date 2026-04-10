@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class estudiante {
     
     private String nombre;
@@ -35,5 +37,21 @@ public class estudiante {
         this.promedio = promedio;
     }
 
+
+    public static void main (String []args ){
+          
+        // 2. Inicializacion
+        ArrayList<estudiante> arreglo = new ArrayList<>();
+        arreglo.add(new estudiante("Navid", 4.1, 20));
+        arreglo.add(new estudiante("Naser", 5.0, 18));
+        arreglo.add(new estudiante("Naren", 2.5, 23));
+
+        // 3. Recorrido
+        System.out.println("========== RECORRIDO ==========");
+        for (estudiante e : arreglo) {
+            e.mostrarInfor();
+        }
+    
+    }
 
 }
