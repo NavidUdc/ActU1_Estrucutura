@@ -37,6 +37,17 @@ public class estudiante {
         this.promedio = promedio;
     }
 
+    public static void modificar(ArrayList<estudiante> arreglo, String nombre, double proemdio){
+        for (estudiante e : arreglo) {
+            if (e.getNombre().equals(nombre)) {
+                e.setPromedio(proemdio);
+                System.out.println("Actualizado: " + e.getNombre() + " | Nuevo promedio: " + e.getPromedio());
+                return;
+            }
+        }
+        System.out.println("Estudiante no encontrado: " + nombre);
+    }
+
 
     public static void main (String []args ){
           
@@ -46,6 +57,15 @@ public class estudiante {
         arreglo.add(new estudiante("Naser", 5.0, 18));
         arreglo.add(new estudiante("Naren", 2.5, 23));
 
+        // 3. Recorrido
+        System.out.println("========== RECORRIDO ==========");
+        for (estudiante e : arreglo) {
+            e.mostrarInfor();
+        }
+
+         // 4. Modificacion
+        System.out.println("========== MODIFICACION ==========");
+        modificar(arreglo, "Naser", 3.5);
     
     }
 
