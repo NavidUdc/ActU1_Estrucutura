@@ -8,6 +8,18 @@ type estudiante struct {
 	promedio float64
 }
 
+func modificar(arreglo []estudiante, nombre string, promedio float64) []estudiante {
+	for i := 0; i < len(arreglo); i++ {
+		if arreglo[i].nombre == nombre {
+			arreglo[i].promedio = promedio
+			fmt.Println("Estudiante modificado:", arreglo[i].nombre, " Nuevo promedio:", arreglo[i].promedio)
+			return arreglo
+		}
+	}
+	fmt.Println("Estudiante no encontrado:", nombre)
+	return arreglo
+}
+
 func main() {
 
 	fmt.Println("========== INICIALIZACION ==========")
@@ -21,13 +33,14 @@ func main() {
 
 	fmt.Println("=========== RECORRIDO ===========")
 	var arreglo = []estudiante{
-		{"navid", 19, 4.5},
-		{"naser", 18, 3.0},
-		{"naren", 25, 2.3},
+		est, est1, est2,
 	}
 
 	for i := 0; i < len(arreglo); i++ {
 		fmt.Println(arreglo[i].nombre, arreglo[i].edad, arreglo[i].promedio)
 	}
+
+	fmt.Println("=========== MODIFICACION ===========")
+	modificar(arreglo, est.nombre, 1.56)
 
 }

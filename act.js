@@ -16,13 +16,33 @@ console.log(est)
 console.log(est1)
 console.log(est2)
 
-console.log("==================== RECORRIDO =========================")
-let arreglo= [
-    new estudiante("naser", 18, 3.5),
-    new estudiante("naren ", 24, 3.9),
-    new estudiante("navid", 19, 2.5)
-]
 
-for(let e of arreglo){
-    console.log(e.nombre, e.edad, e.promedio)
+let arreglo= [
+    est,
+    est1,
+    est2
+]
+function recorrer(arreglo){
+    for(let e of arreglo){
+        console.log(e.nombre, e.edad, e.promedio)
+    }
+
 }
+
+
+
+
+function modificar (arreglo, nombre, promedio){
+    for (let e of arreglo) {
+        if (e.nombre == nombre) {
+            e.promedio = promedio
+            console.log("Actualizacion:", e.nombre, e.edad, e.promedio)
+            return
+        }
+    }
+    console.log("Estudiante no encontrado")
+}
+console.log("==================== RECORRIDO =========================")
+recorrer(arreglo)
+console.log("================== MODIFICACION ===================")
+modificar(arreglo, est.nombre, 4.8)
